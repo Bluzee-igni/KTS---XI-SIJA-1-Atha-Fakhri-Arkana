@@ -8,6 +8,9 @@ jobs:
   super-lint:
     name: Lint code base
     runs-on: ubuntu-latest
+    permissions:
+      contents: write      # supaya bisa update status lint
+      statuses: write      # supaya bisa post hasil lint ke GitHub
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
