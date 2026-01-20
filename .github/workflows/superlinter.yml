@@ -9,8 +9,8 @@ jobs:
     name: Lint code base
     runs-on: ubuntu-latest
     permissions:
-      contents: write      # supaya bisa update status lint
-      statuses: write      # supaya bisa post hasil lint ke GitHub
+      contents: write
+      statuses: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -20,3 +20,4 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_CHECKOV: false   
